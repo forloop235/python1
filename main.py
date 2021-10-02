@@ -34,15 +34,15 @@ class product:
 
 root = Tk()
 root.title("E-INVOICE GENERATOR")
-width = 750
-height = 290  
+width = 1450
+height = 1090  
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 x = (screen_width / 2) - (width / 2)
 y = (screen_height / 2) - (height / 2)
 root.geometry("%dx%d+%d+%d" % (width, height, x, y))
 root.resizable(0, 0)
-root.config(bg="#6666ff")
+root.config(bg="#2392ff")
 
 PRODUCTNAME = StringVar()
 QUANTITY = IntVar()
@@ -96,7 +96,7 @@ def SubmitData():
 
 def DeleteData():
     if not tree.selection():
-        result = tkMessageBox.showwarning('', 'Please Select Something First!', icon="warning")
+        result = tkMessageBox.showwarning('', 'Please Select Something!', icon="warning")
     else:
         result = tkMessageBox.askquestion('', 'Are you sure you want to delete this item?', icon="warning")
         if result == 'yes':
@@ -196,9 +196,9 @@ lbl_title = Label(Top, text="Shop Name", font=('arial', 16), width=500)
 lbl_title.pack(fill=X)
 
 # ============================BUTTONS=====================================
-btn_add = Button(MidLeft, text="Add New Item", bg="#66ff66", command=AddNewWindow)
+btn_add = Button(MidLeft, text="Add New Item", bg="#66aa66", command=AddNewWindow)
 btn_add.pack()
-btn_delete = Button(MidRight, text="Remove Selected Item", bg="red", command=DeleteData)
+btn_delete = Button(MidRight, text="Remove Selected Item", bg="white", command=DeleteData)
 btn_delete.pack(side=RIGHT)
 
 btn_print = Button(TableMargin, text="Print Invoice", bg="lightgreen", command=printinvoice)
