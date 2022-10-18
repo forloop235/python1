@@ -15,7 +15,7 @@ except:
 class header:
     def __init__(self, CustomerName, CustomerContact):
         self.InvoiceNumber = time.time()
-        self.CustomerName = CustomerName
+        self.dsfdsadf = CustomerName
         self.CustomerContact = CustomerContact
         timedate = time.asctime()
         self.date = timedate[4:8] + timedate[8:10] + ", " + timedate[20:24] + "."
