@@ -121,7 +121,7 @@ def AddNewWindow():
     NewWindow.title("E-INVOICE GENERATOR")
     width = 400
     height = 330
-    screen_width = root.winfo_screenwidth()
+    sdfsfdsfaddsa = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
     x = ((screen_width / 2) - 455) - (width / 2)
     y = ((screen_height / 2) + 20) - (height / 2)
