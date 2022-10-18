@@ -13,9 +13,9 @@ except:
 
 
 class header:
-    def __init__(self, CustomerName, CustomerContact):
+    def __init__(self, Customer, CustomerContact):
         self.InvoiceNumber = time.time()
-        self.CustomerName = CustomerName
+        self.Customer = Customer
         self.CustomerContact = CustomerContact
         timedate = time.asctime()
         self.date = timedate[4:8] + timedate[8:10] + ", " + timedate[20:24] + "."
@@ -50,15 +50,15 @@ RATE = IntVar()
 TAX = IntVar()
 TOTAL = IntVar()
 DISCOUNT = IntVar()
-CustomerName = StringVar()
+Customer = StringVar()
 CustomerContact = StringVar()
 
 Products = []
 
 
 def printinvoice():
-    head = header(CustomerName.get(), CustomerContact.get())
-    pdf = canvas.Canvas("/Users/uttam/Desktop/bill/" + str(head.CustomerName) + ".pdf")
+    head = header(Customer.get(), CustomerContact.get())
+    pdf = canvas.Canvas("/Users/uttam/Desktop/bill/" + str(head.Customer) + ".pdf")
     pdfgen.header(head, pdf)
     pdfgen.middle(pdf)
     ycooridinate = 650
@@ -73,7 +73,7 @@ def printinvoice():
     pdf.setFont("Courier-Bold", 11)
     pdfgen.footer(pdf, Products)
     pdf.save()
-    webbrowser.open("/Users/uttam/Desktop/bill/" + str(CustomerName) + ".pdf")
+    webbrowser.open("/Users/uttam/Desktop/bill/" + str(Customer) + ".pdf")
 
 
 def SubmitData():
@@ -166,7 +166,7 @@ def AddNewWindow():
     Tax.grid(row=3, column=1)
     discountEntry = Entry(Form, textvariable=DISCOUNT, font=('arial', 14))
     discountEntry.grid(row=4, column=1)
-    nameEntry = Entry(Form, textvariable=CustomerName, font=('arial', 14))
+    nameEntry = Entry(Form, textvariable=Customer, font=('arial', 14))
     nameEntry.grid(row=5, column=1)
     nameEntry = Entry(Form, textvariable=CustomerContact, font=('arial', 14))
     nameEntry.grid(row=6, column=1)
